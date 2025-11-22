@@ -20,8 +20,10 @@ def database_create(data):
 def database_insert(data):
     print("\nInsertion des données dans la base.")
     try:
-        # on lit les données dans le fichier Excel
-        excel_extractor.read_excel_file_V0(data, "data/LesJO.xlsx")
+        # Génération du fichier SQL d'insertion puis exécution
+        sql_file = "data/v0_extractionDB.sql"
+        excel_extractor.generate_sql_insert_file(data, "data/LesJO.xlsx", sql_file)
+        db.updateDBfile(data, sql_file)
     except Exception as e:
         # En cas d'erreur, on affiche un message
         print("L'erreur suivante s'est produite lors de l'insertion des données : " + repr(e) + ".", file=sys.stderr)
