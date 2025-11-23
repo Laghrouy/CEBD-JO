@@ -8,6 +8,8 @@ def database_create(data):
     try:
         # On exécute les requêtes du fichier de création
         db.updateDBfile(data, "data/v0_createDB.sql")
+        # on crée les vues dans un fichier séparé
+        db.updateDBfile(data, "data/v0_viewDB.sql")
     except Exception as e:
         # En cas d'erreur, on affiche un message
         print("L'erreur suivante s'est produite pendant lors de la création de la base : " + repr(e) + ".")

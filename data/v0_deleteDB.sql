@@ -1,5 +1,10 @@
 -- Ordre de suppression respectant les dépendances (FK) :
--- Médailles -> Sous-classes -> Inscription -> Associations -> Entités de base.
+-- Vues -> Médailles -> Sous-classes -> Inscription -> Associations -> Entités de base.
+
+DROP VIEW IF EXISTS LesAgesSportifs;
+DROP VIEW IF EXISTS LesNbsEquipiers;
+DROP VIEW IF EXISTS AgesMoyensEquipesOr;
+DROP VIEW IF EXISTS ClassementPaysMedaille;
 
 DROP TABLE IF EXISTS "Or";
 DROP TABLE IF EXISTS "Argent";
