@@ -10,6 +10,8 @@ def database_create(data):
         db.updateDBfile(data, "data/v0_createDB.sql")
         # on crée les vues dans un fichier séparé
         db.updateDBfile(data, "data/v0_viewDB.sql")
+        # On crée les triggers dans un fichier séparé (séparateur '/')
+        db.updateDBfile(data, "data/v0_triggerDB.sql", trigger=True)
     except Exception as e:
         # En cas d'erreur, on affiche un message
         print("L'erreur suivante s'est produite pendant lors de la création de la base : " + repr(e) + ".")
